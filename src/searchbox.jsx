@@ -5,7 +5,7 @@ import "./searchBox.css";
 import InfoBox from "./InfoBox";
 
 
-const API_KEY = import.meta.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function SearchBox() {
   const [city, setCity] = useState("");
