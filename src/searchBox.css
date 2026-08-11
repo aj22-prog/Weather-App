@@ -1,0 +1,273 @@
+searchBox {
+  width: 500px;
+  max-width: 92%;
+  margin: 60px auto;
+  padding: 35px 32px 40px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(30, 64, 175, 0.12),
+    0 5px 15px rgba(0, 0, 0, 0.06);
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+
+.searchBox h3 {
+  margin: 0 0 30px;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #172554;
+
+  letter-spacing: -0.5px;
+}
+
+
+
+.searchBox form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+.searchBox .MuiTextField-root {
+  width: 100%;
+}
+
+.searchBox .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background-color: #f8fafc;
+
+  transition: all 0.25s ease;
+}
+
+.searchBox .MuiOutlinedInput-root:hover {
+  background-color: #ffffff;
+}
+
+.searchBox .MuiOutlinedInput-root.Mui-focused {
+  background-color: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.searchBox .MuiInputLabel-root {
+  color: #64748b;
+}
+
+.searchBox .MuiInputLabel-root.Mui-focused {
+  color: #2563eb;
+}
+
+
+
+.searchBox .MuiButton-root {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 4px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color: #ffffff !important;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  text-transform: none;
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+
+  transition: all 0.25s ease;
+}
+
+.searchBox .MuiButton-root:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #1e40af
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+.searchBox .MuiButton-root:active {
+  transform: translateY(0);
+}
+
+
+
+.infoBox {
+  margin-top: 30px;
+}
+
+
+/* Weather heading */
+.infoBox h2 {
+  margin: 0 0 22px;
+
+  color: #0f172a;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+
+.weatherCard {
+  width: 100%;
+  overflow: hidden;
+
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12) !important;
+
+  background: #ffffff !important;
+}
+
+
+/* Weather image */
+.weatherCard img {
+  height: 180px;
+  width: 100%;
+
+  object-fit: cover;
+}
+
+
+
+
+.weatherDetails {
+  padding: 22px 20px 15px !important;
+  text-align: center;
+}
+
+
+/* City name */
+.weatherDetails .cityName {
+  margin-bottom: 12px;
+
+  color: #0f172a;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+/* Weather information */
+.weatherDetails p {
+  margin: 6px 0;
+
+  color: #475569;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* Highlight temperature */
+.weatherDetails .temperature {
+  color: #2563eb;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* Description */
+.weatherDetails .description {
+  color: #64748b;
+
+  font-style: capitalize;
+}
+
+
+
+
+.weatherCard .MuiCardActions-root {
+  display: flex;
+
+  gap: 10px;
+
+  padding: 12px 12px 14px;
+}
+
+.weatherCard .MuiCardActions-root .MuiButton-root {
+  flex: 1;
+
+  height: 46px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff !important;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-transform: none;
+
+  transition: all 0.25s ease;
+}
+
+.weatherCard .MuiCardActions-root .MuiButton-root:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+
+
+@media (max-width: 600px) {
+
+  .searchBox {
+    width: 94%;
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    padding: 28px 18px 30px;
+
+    border-radius: 20px;
+  }
+
+  .searchBox h3 {
+    font-size: 25px;
+    margin-bottom: 24px;
+  }
+
+  .infoBox h2 {
+    font-size: 25px;
+  }
+
+  .weatherCard img {
+    height: 160px;
+  }
+
+  .weatherCard .MuiCardActions-root {
+    flex-direction: column;
+  }
+
+  .weatherCard .MuiCardActions-root .MuiButton-root {
+    width: 100%;
+  }
+}
