@@ -1,273 +1,218 @@
-searchBox {
-  width: 500px;
-  max-width: 92%;
-  margin: 60px auto;
-  padding: 35px 32px 40px;
+/* ==========================================================================
+   Atmosphere Weather App Design System & Styles - High Contrast & Visibility
+   ========================================================================== */
 
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 24px;
-
-  box-shadow:
-    0 20px 50px rgba(30, 64, 175, 0.12),
-    0 5px 15px rgba(0, 0, 0, 0.06);
-
-  text-align: center;
-  box-sizing: border-box;
-}
-
-
-
-.searchBox h3 {
-  margin: 0 0 30px;
-
-  font-size: 30px;
-  font-weight: 700;
-  color: #172554;
-
-  letter-spacing: -0.5px;
-}
-
-
-
-.searchBox form {
+.app-viewport {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top, #111827 0%, #080d1a 100%);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Ambient dynamic backdrops */
+.ambient-blob {
+  position: absolute;
+  filter: blur(100px);
+  border-radius: 50%;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  top: -10%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #2563eb, rgba(37, 99, 235, 0));
+}
+
+.blob-2 {
+  top: 30%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #0284c7, rgba(2, 132, 199, 0));
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  bottom: 5%;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #4f46e5, rgba(79, 70, 229, 0));
+  animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 40px) scale(1.08);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+/* Header Typography */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.75rem !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.header-subtitle {
+  color: #e2e8f0 !important;
+  font-size: clamp(1rem, 2vw, 1.15rem) !important;
+  max-width: 560px;
+  margin: 0 auto !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Glass panel container */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.82) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px;
+  padding: 1.75rem;
+}
+
+/* Search Box specific */
+.searchbox-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  gap: 18px;
   align-items: center;
 }
 
-
-
-
-.searchBox .MuiTextField-root {
-  width: 100%;
-}
-
-.searchBox .MuiOutlinedInput-root {
-  border-radius: 12px;
-  background-color: #f8fafc;
-
-  transition: all 0.25s ease;
-}
-
-.searchBox .MuiOutlinedInput-root:hover {
-  background-color: #ffffff;
-}
-
-.searchBox .MuiOutlinedInput-root.Mui-focused {
-  background-color: #ffffff;
-
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
-}
-
-.searchBox .MuiInputLabel-root {
-  color: #64748b;
-}
-
-.searchBox .MuiInputLabel-root.Mui-focused {
-  color: #2563eb;
-}
-
-
-
-.searchBox .MuiButton-root {
-  width: 100%;
-  height: 52px;
-
-  margin-top: 4px;
-
-  border-radius: 12px;
-
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #1d4ed8
-  );
-
-  color: #ffffff !important;
-
-  font-size: 17px;
-  font-weight: 700;
-
-  text-transform: none;
-
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
-
-  transition: all 0.25s ease;
-}
-
-.searchBox .MuiButton-root:hover {
-  background: linear-gradient(
-    135deg,
-    #1d4ed8,
-    #1e40af
-  );
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
-}
-
-.searchBox .MuiButton-root:active {
-  transform: translateY(0);
-}
-
-
-
-.infoBox {
-  margin-top: 30px;
-}
-
-
-/* Weather heading */
-.infoBox h2 {
-  margin: 0 0 22px;
-
-  color: #0f172a;
-
-  font-size: 30px;
-  font-weight: 700;
-}
-
-
-
-.weatherCard {
-  width: 100%;
-  overflow: hidden;
-
-  border-radius: 16px !important;
-
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.12) !important;
-
-  background: #ffffff !important;
-}
-
-
-/* Weather image */
-.weatherCard img {
-  height: 180px;
-  width: 100%;
-
-  object-fit: cover;
-}
-
-
-
-
-.weatherDetails {
-  padding: 22px 20px 15px !important;
-  text-align: center;
-}
-
-
-/* City name */
-.weatherDetails .cityName {
-  margin-bottom: 12px;
-
-  color: #0f172a;
-
-  font-size: 25px;
-  font-weight: 700;
-}
-
-
-/* Weather information */
-.weatherDetails p {
-  margin: 6px 0;
-
-  color: #475569;
-
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-
-/* Highlight temperature */
-.weatherDetails .temperature {
-  color: #2563eb;
-
-  font-size: 22px;
-  font-weight: 700;
-}
-
-
-/* Description */
-.weatherDetails .description {
-  color: #64748b;
-
-  font-style: capitalize;
-}
-
-
-
-
-.weatherCard .MuiCardActions-root {
-  display: flex;
-
-  gap: 10px;
-
-  padding: 12px 12px 14px;
-}
-
-.weatherCard .MuiCardActions-root .MuiButton-root {
-  flex: 1;
-
-  height: 46px;
-
-  border-radius: 10px;
-
-  background: #2563eb;
-
-  color: #ffffff !important;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  text-transform: none;
-
-  transition: all 0.25s ease;
-}
-
-.weatherCard .MuiCardActions-root .MuiButton-root:hover {
-  background: #1d4ed8;
-
-  transform: translateY(-1px);
-}
-
-
-
-
 @media (max-width: 600px) {
-
-  .searchBox {
-    width: 94%;
-    max-width: 500px;
-
-    margin: 25px auto;
-
-    padding: 28px 18px 30px;
-
-    border-radius: 20px;
-  }
-
-  .searchBox h3 {
-    font-size: 25px;
-    margin-bottom: 24px;
-  }
-
-  .infoBox h2 {
-    font-size: 25px;
-  }
-
-  .weatherCard img {
-    height: 160px;
-  }
-
-  .weatherCard .MuiCardActions-root {
+  .search-form {
     flex-direction: column;
+    gap: 16px;
   }
+}
 
-  .weatherCard .MuiCardActions-root .MuiButton-root {
-    width: 100%;
+/* Glass Weather Card */
+.glass-card {
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  overflow: hidden;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideUpFade 0.4s ease-out;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Refined Dashboard Metric Cards (Structured Grid)
+   ========================================================================== */
+
+.metric-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 1.1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-box:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.metric-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-title {
+  color: #ffffff !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  opacity: 0.95;
+}
+
+.metric-number {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1.55rem !important;
+  font-family: var(--font-heading) !important;
+  line-height: 1 !important;
+}
+
+.metric-unit {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  opacity: 0.9;
+}
+
+.metric-status {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
